@@ -5,8 +5,6 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-
-
 class _LoginPageState extends State<LoginPage> {
 
   final _usernameController = TextEditingController();
@@ -29,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 120.0),
             TextField(
-              decoration: InputDecoration(filled: true, labelText: 'Username'),
+              decoration: InputDecoration(filled: true, labelText: 'Email'),
               controller: _usernameController,
             ),
             SizedBox(
