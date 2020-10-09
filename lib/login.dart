@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mcd01/supplemental/cut_corners_border.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -62,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                   labelStyle: TextStyle(
                       color: _passwordFocusNode.hasFocus
                           ? Theme.of(context).accentColor
-                          : _unfocusedColor)),
+                          : _unfocusedColor),
+              border: new CutCornersBorder()),
               obscureText: true,
               focusNode: _passwordFocusNode,
               controller: _passwordController,
@@ -70,16 +72,21 @@ class _LoginPageState extends State<LoginPage> {
             ButtonBar(
               children: <Widget>[
                 FlatButton(
-                    onPressed: () {
-                      _usernameController.clear();
-                      _passwordController.clear();
-                    },
-                    child: Text('CANCEL')),
+                  onPressed: () {
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
+                  child: Text('CANCEL'),
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
+                ),
                 RaisedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   child: Text('NEXT'),
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
                   elevation: 8.0,
                 )
               ],
